@@ -106,24 +106,10 @@ namespace CarInsurance.Controllers
                     insuree.Quote += 0;
                 }
 
-                //int inputSpeed = insuree.SpeedingTickets;
-                //for (inputSpeed = 0; inputSpeed < 30; inputSpeed++)
-                //{
-                //    insuree.Quote += 10;
-                //    inputSpeed++;
-                //}
-                //if (inputSpeed == 0)
-                //{
-                //    insuree.Quote += 0;
-                //}
-                //else if (inputSpeed > 0)
-                //{
-                //    insuree.Quote += 10;
-                //}
-                //else
-                //{
-                //    insuree.Quote += 0;
-                //}
+                int inputSpeed = insuree.SpeedingTickets;
+                int numOfSpeedTickets = inputSpeed * 10;
+                insuree.Quote += numOfSpeedTickets;
+                
                 
                 bool inputDui = insuree.DUI;
                 if(inputDui == true)
@@ -134,6 +120,17 @@ namespace CarInsurance.Controllers
                 else if (inputDui != true)
                 {
                     insuree.Quote += 0;
+                }
+                else
+                {
+                    insuree.Quote += 0;
+                }
+
+                bool inputFull = insuree.Full;
+                if (inputFull == true)
+                {
+                    decimal x = insuree.Quote * .50m;
+                    insuree.Quote += x;
                 }
                 else
                 {
