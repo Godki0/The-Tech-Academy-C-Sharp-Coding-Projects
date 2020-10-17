@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Braydon's Portfolio</h1>
+    <p class="lead">
+      <q>
+        Controlling complexity is the essence of computer programming.
+      </q>
+      <br>-Brain Kernighan
+      <br>
+      My name is Braydon. Welcome to my portfolio website. On it, I will tell you about my background and experience.<br>
+      <br>Thank you for stopping by and enjoy!
+    </p>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div id="Slideshow">
+      <div id="Slideshow_Background">
+        <div id="Slideshow_Container">
+
+          <div class="mySlides fade">
+            <div class="Slide_Number">1 / 6</div>
+            <img class="Slide_Show_Images" src="~/Content/image/me.jpg" style="width: 100%;"> <!-- add image of self once I have one-->
+            <div class="text">I'm avaiable to assist you on your project!</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="Slide_Number">2 / 6</div>
+            <img class="Slide_Show_Images" src="~/Content/image/HTML_CSS_and_JavaScript.jpeg" style="width: 100%;">
+            <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="Slide_Number">3 / 6</div>
+            <img class="Slide_Show_Images" src="~/Content/image/Python.png" style="width: 100%;">
+            <div class="text">the popular programming language Python,</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="Slide_Number">4 / 6</div>
+            <img class="Slide_Show_Images" src="~/Content/image/C_Sharp_and_Dot_NET.png" style="width: 100%;">
+            <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="Slide_Number">5 / 6</div>
+            <img class="Slide_Show_Images" src="~/Content/image/SQL_and_Database.jpg" style="width: 100%;">
+            <div class="text">back end development, databases, and SQL.</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="Slide_Number">6 / 6</div>
+            <img class="Slide_Show_Images" src="~/Content/image/Coding_1.jpg" style="width: 100%;">
+            <div class="text">
+              <a onclick="openForm()" href="#Contact" style="color: white;">Contact me now!</a>
+            </div>
+          </div>
+
+          <a class="Previous" onclick="plusSlides(-1)">&#10094</a>
+          <a class="Next" onclick="plusSlides(1)">&#10095</a>
+
+        </div>
+        <br>
+
+        <div style="text-align: center;">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- We included our JS function within this file to ensure it was given precedence, this function covers the slideshow -->
+    <script>
+        var slideIndex = 1;
+            showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length;i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length;i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+        }
+    </script>
+  </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
